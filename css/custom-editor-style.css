@@ -9251,12 +9251,6 @@ body {
   color: #b2b2b2;
   font-family: 'open-sans', sans-serif; }
 
-.mb {
-  margin-bottom: 10vh; }
-
-.pb {
-  padding-bottom: 5vh; }
-
 /*------------------------------------------------*/
 /*---------------[MAIN LAYOUT INFO]---------------*/
 /*------------------------------------------------*/
@@ -9267,14 +9261,385 @@ body {
   justify-content: flex-end; }
 
 /*------------------------------------------------*/
-/*-------------------[MENU]-----------------------*/
-/*------------------------------------------------*/
-/*------------------------------------------------*/
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
 /*------------------------------------------------*/
 /*--------------------[SIDEBAR]-------------------*/
 /*------------------------------------------------*/
+/*------------------------------------------------*/
+/*--------------------[FORMS]-------------------*/
+/*------------------------------------------------*/
+.nf-form-content input[type="submit"],
+.nf-form-content input[type="button"],
+.nf-form-content button {
+  font-family: "open-sans", sans-serif;
+  text-transform: uppercase;
+  color: #fff !important;
+  background-color: #fece00 !important;
+  border-color: #fece00 !important;
+  border-radius: 5px; }
+  .nf-form-content input[type="submit"]:hover,
+  .nf-form-content input[type="button"]:hover,
+  .nf-form-content button:hover {
+    background-color: #002132 !important;
+    border-color: #001a28 !important; }
+
+.progress-bar {
+  background-color: #fece00; }
+
+/*------------------------------------------------*/
+/*------------------[WOOCOMMERCE]-----------------*/
+/*------------------------------------------------*/
+/* SHOP */
+.shop_image {
+  margin-bottom: 15px; }
+
+.woocommerce-LoopProduct-link:hover {
+  text-decoration: none !important; }
+
+#shopSectionTitle {
+  text-align: center;
+  margin-bottom: 50px;
+  clear: both; }
+
+#shopSectionTitle h1, #shopSectionTitle h5 {
+  margin: 0; }
+
+#shopProduct {
+  display: inline-block;
+  margin-bottom: 40px; }
+
+#shopProduct #notifyMe {
+  background-color: #F58634;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 6px 20px; }
+
+#shopProduct, #shopProduct a {
+  color: #363636 !important; }
+
+#shopProductTitle h3 {
+  margin: 0;
+  font-size: 24px;
+  font-size: 2.4rem; }
+
+.shopCountdown {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: bold; }
+
+#shopPrice {
+  display: flex;
+  font-size: 18px; }
+
+#shopPrice .sale_price {
+  margin-right: 25px; }
+
+#shopPercentFunded {
+  float: right; }
+
+#fundEndsIn {
+  text-transform: uppercase; }
+
+#shopPercentage {
+  font-weight: bold; }
+
+.shopSmall {
+  margin-bottom: 25px; }
+
+.shopSmall a {
+  color: #363636 !important; }
+
+.shopSmall h3 {
+  font-size: 16px;
+  font-size: 1.6rem;
+  display: inline;
+  font-weight: bold; }
+
+.shopSmall img {
+  margin-bottom: 15px; }
+
+.shopSmall .amount {
+  float: right; }
+
+.shopSmall .regular_price {
+  display: none; }
+
+.shopSmall .sale_price .small_price {
+  display: none; }
+
+.shopSmall .sale_price span.woocommerce-Price-amount.amount:after {
+  content: ' SALE';
+  color: green;
+  font-size: 10px; }
+
+.regProduct .small_price {
+  display: none; }
+
+.onsale {
+  display: none; }
+
+.bx-wrapper {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0;
+  background: transparent; }
+
+#wc_image_gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  visibility: hidden; }
+
+#wc_image_gallery img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%; }
+
+.shop_link {
+  font-size: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #c2c2c2; }
+
+.shop_link:hover {
+  color: #c2c2c2; }
+
+#product_details {
+  margin-top: 100px;
+  text-align: center;
+  align-self: center; }
+
+#product_details .price {
+  display: flex;
+  justify-content: center;
+  font-size: 4rem; }
+
+#product_details .price > * {
+  -webkit-flex-basis: 49%;
+  -moz-flex-basis: 49%;
+  -ms-flex-preferred-size: 49%;
+  flex-basis: 49%; }
+
+.sale_price {
+  order: 1; }
+
+.regular_price {
+  order: 2;
+  color: #c2c2c2;
+  padding-left: 0.25em;
+  text-decoration: line-through; }
+
+.small_price {
+  display: block;
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 1em; }
+
+#product_details .button {
+  float: none; }
+
+#product_details .quantity {
+  display: none; }
+
+#prodCountdown {
+  margin-bottom: 15px; }
+
+#funding_ending {
+  display: inline;
+  font-size: 11px;
+  font-size: 1.1rem;
+  color: #0f2130;
+  text-transform: uppercase;
+  font-weight: bold; }
+
+#percentFunded {
+  font-size: 11px;
+  font-size: 1.1rem;
+  color: #0f2130;
+  text-align: center; }
+
+#funding_end_date {
+  display: inline;
+  margin-left: 5px; }
+
+.product_title {
+  margin-top: 50px !important; }
+
+#product_details .variations td select {
+  padding: 10px 25px;
+  border: solid 1px #0f2130;
+  border-radius: 0;
+  text-transform: uppercase; }
+
+#product_details .cart {
+  margin-bottom: 10px !important; }
+
+#mc_embed_signup .button {
+  color: #ffffff;
+  margin-bottom: 25px; }
+
+#mc_embed_signup_scroll .email {
+  padding: 5px 25px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase; }
+
+#estShipping {
+  border: solid 1px #0f2130;
+  padding: 10px 25px;
+  font-size: 11px;
+  font-size: 1.1rem;
+  color: #0f2130;
+  font-weight: bold;
+  max-width: 450px;
+  margin: 0 auto; }
+
+.featherlight-content {
+  max-width: 85%; }
+
+.featherlight-content h5 {
+  font-weight: bold; }
+
+.sizing_icon {
+  background: url(//cdn.shopify.com/s/files/1/0070/1922/t/12/assets/icon-sizing.svg?11074636442064151721) no-repeat;
+  background-position: center top;
+  height: 30px;
+  display: inline-block; }
+
+#sizingInfo .entry-title {
+  margin-top: 0 !important; }
+
+.shipping_icon {
+  background: url(//cdn.shopify.com/s/files/1/0070/1922/t/12/assets/icon-shipping.svg?11074636442064151721) no-repeat;
+  background-position: center top;
+  height: 30px;
+  display: inline-block; }
+
+.help_icon {
+  background: url(//cdn.shopify.com/s/files/1/0070/1922/t/12/assets/icon-help.svg?11074636442064151721) no-repeat;
+  background-position: center top;
+  height: 30px;
+  display: inline-block; }
+
+.featherlight-inner {
+  display: block !important; }
+
+#product_links {
+  margin-top: 25px;
+  margin-bottom: 25px; }
+
+#product_links a {
+  font-size: 10px;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #0f2130; }
+
+#product_links a:hover {
+  text-decoration: none; }
+
+#product_links span {
+  display: block;
+  padding: 45px 10px 0; }
+
+#product_specs_wrapper {
+  clear: both;
+  background-color: #fafafa;
+  padding-bottom: 40px; }
+
+#product_specs h3 {
+  font-size: 10px;
+  font-size: 1rem;
+  color: #0f2130;
+  text-transform: uppercase;
+  margin: 5em 0 2.5em;
+  font-weight: bold; }
+
+#product_specs p {
+  font-size: 1.4rem;
+  line-height: 1.6em; }
+
+#hero_images img {
+  width: 100%; }
+
+#returnHelp {
+  list-style: disc;
+  margin-left: 35px; }
+
+/*------------------------------------------------*/
+/*---------------[RESPONSIVE LAYOUTS]-------------*/
+/*------------------------------------------------*/
+@media only screen and (min-width: 992px) {
+  .bx-wrapper {
+    margin-left: -15px; }
+  #shopButton {
+    display: none; }
+  .product_wrapper {
+    display: flex;
+    flex-direction: column; } }
+
+/*-------------------[960px]------------------*/
+@media only screen and (max-width: 767px) {
+  .shopSmall {
+    text-align: center; }
+  .shopSmall img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 25px; }
+  .shopSmall .amount {
+    float: none;
+    display: block; }
+  .shopSmall .sale_price span.woocommerce-Price-amount.amount:after {
+    content: 'SALE';
+    display: block; } }
+
+/*-------------------[768px]------------------*/
+@media only screen and (max-width: 991px) {
+  #shopPercentFunded {
+    display: none; }
+  #shopProduct {
+    text-align: center; }
+  #prodCountdown {
+    margin-bottom: 0; }
+  #shopPrice {
+    display: none; }
+  #notifyMe {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 250px;
+    font-weight: bold; }
+  #shopButton {
+    margin: 2em 0 5em;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .14em;
+    color: #363636;
+    border: 3px solid #363636;
+    padding: 1em 1.5em;
+    display: inline-block; } }
+
+/*-------------------[480px]------------------*/
+@media only screen and (max-width: 767px) {
+  /*-------------------[Menu]------------------*/ }
+
+/*-------------------[320px]------------------*/
+@media only screen and (max-width: 479px) {
+  #estShipping {
+    margin: 0 25px; } }
+
 /*------------------------------------------------*/
 /*---------------------[FOOTER]-------------------*/
 /*------------------------------------------------*/
@@ -9302,6 +9667,16 @@ body {
         font-size: 12px; }
         #wrapper-footer ul li a:hover {
           text-decoration: none; }
+
+#bottomFooter {
+  background-color: #fece00;
+  color: #fff;
+  padding-top: 25px;
+  padding-bottom: 25px; }
+  #bottomFooter a {
+    color: #fff; }
+    #bottomFooter a:hover {
+      text-decoration: none; }
 
 /*------------------------------------------------*/
 /*---------------[RESPONSIVE LAYOUTS]-------------*/
