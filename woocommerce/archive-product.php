@@ -17,88 +17,128 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	exit; // Exit if accessed directly
 }
 
 get_header( 'shop' ); ?>
 
 	<?php
 		/**
-		 * Woocommerce_before_main_content hook.
+		 * woocommerce_before_main_content hook.
 		 *
 		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
-		do_action( 'woocommerce_before_main_content' );
+		/***Remove the default wrapper***/
+			//do_action( 'woocommerce_before_main_content' );
 	?>
 
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+<!-- Add the bootstrap markup -->
+<div id="main-content">
+	<div class="container">
+		<div id="content-area" class="clearfix row">
+		<div id = "shopSectionTitle">
+			<h5>Currently Funding</h5>
+			<h1 class="page-title">Active Projects</h1>
+		</div>
 
-			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
+			<?php
 
-		<?php endif; ?>
+				//Custom query for products currently being funded
+				$args = array(
+						'post_type' => 'product',
+						'meta_key'     => '_alg_crowdfunding_enabled',
+						'meta_value'   => 'yes',
+				 );
+				$loop = new WP_Query( $args );
 
-		<?php
-			/**
-			 * Woocommerce_archive_description hook.
-			 *
-			 * @hooked woocommerce_taxonomy_archive_description - 10
-			 * @hooked woocommerce_product_archive_description - 10
-			 */
-			do_action( 'woocommerce_archive_description' );
-		?>
+				if ( $loop->have_posts() ) :
 
-		<?php if ( have_posts() ) : ?>
+				while ( $loop->have_posts() ) : $loop->the_post();
+
+				wc_get_template_part( 'content', 'af-product' );
+
+				endwhile;
+
+				wp_reset_query(); // Reset the query 
+
+				endif; ?>
+
+			<div id = "shopSectionTitle" class = "clearfix">
+				<h5>Funding Completed</h5>
+				<h1 class="page-title">In Production</h1>
+			</div>
+
+			<div>
+
+			<?php
+
+				//Custom query for products currently in production
+				$args = array(
+						'post_type' => 'product',
+						'meta_key'     => '_alg_crowdfunding_enabled',
+						'meta_value'   => 'no',
+				 );
+				$loop = new WP_Query( $args );
+
+				if ( $loop->have_posts() ) :
+
+				$i = 0;
+				
+				while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+				<?php
+
+				if($i % 3 == 0) { ?> 
+        		<div class="row d-flex">
+   				<?php
+   				}
+    			?>
+				    <?php wc_get_template_part( 'content', 'product' ); ?>
+
+				    <?php 
+				    $i++;
+    				if($i != 0 && $i % 3 == 0) { ?> 
+       				</div><!-- end of row -->
+    				<?php
+    				}
+
+				endwhile; ?>
+
+				<?php wp_reset_query(); // Reset the query ?>
+
+			<?php endif; ?>
+
+			</div>
+
 
 			<?php
 				/**
-				 * Woocommerce_before_shop_loop hook.
-				 *
-				 * @hooked woocommerce_result_count - 20
-				 * @hooked woocommerce_catalog_ordering - 30
-				 */
-				do_action( 'woocommerce_before_shop_loop' );
-			?>
-
-			<?php woocommerce_product_loop_start(); ?>
-
-				<?php woocommerce_product_subcategories(); ?>
-
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php wc_get_template_part( 'content', 'product' ); ?>
-
-				<?php endwhile; // end of the loop. ?>
-
-			<?php woocommerce_product_loop_end(); ?>
-
-			<?php
-				/**
-				 * Woocommerce_after_shop_loop hook.
+				 * woocommerce_after_shop_loop hook.
 				 *
 				 * @hooked woocommerce_pagination - 10
 				 */
 				do_action( 'woocommerce_after_shop_loop' );
 			?>
 
-		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
-
-			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
-
-		<?php endif; ?>
-
 	<?php
 		/**
-		 * Woocommerce_after_main_content hook.
+		 * woocommerce_after_main_content hook.
 		 *
 		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
 		 */
-		do_action( 'woocommerce_after_main_content' );
+		/***Remove the default closing tags for wrapper***/
+		//do_action( 'woocommerce_after_main_content' );
+		//Close the main content area div
+		echo '</div> <!-- #content-area -->';
+		echo '</div> <!-- .container -->';
+		echo '</div> <!-- #main-content -->';
+		echo '</div> <!-- main area -->';
 	?>
 
 	<?php
 		/**
-		 * Woocommerce_sidebar hook.
+		 * woocommerce_sidebar hook.
 		 *
 		 * @hooked woocommerce_get_sidebar - 10
 		 */

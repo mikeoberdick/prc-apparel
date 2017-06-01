@@ -9,3 +9,16 @@ jQuery('ul.navbar-nav li.dropdown').hover(function() {
 }, function() {
 	jQuery(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
 });
+
+jQuery(document).ready(function(){
+
+  jQuery('.bxslider').bxSlider({
+  	auto: true,
+  	onSliderLoad: function() {
+  		jQuery("#wc_image_gallery").css("visibility", "visible");
+  	}
+  	});
+
+});
+
+AOS.init();
