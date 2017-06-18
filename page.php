@@ -2,71 +2,48 @@
 /**
  * The template for displaying all pages.
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * This is the template for pages...note the conditionals for use with template parts.
+ * Each page will need a container and a row.
+ * These elements have been removed from this page to allow for each page to either be a fixed or fluid width container.
  *
  * @package understrap
  */
 
 get_header();
 
-$container   = get_theme_mod( 'understrap_container_type' );
-$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
-
 ?>
 
-<div class="wrapper" id="page-wrapper">
+<div id="page-wrapper">
 
-	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
+	<main class="site-main" id="main">
 
-		<div class="row">
+		<?php while ( have_posts() ) : the_post(); ?>
 
-			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
+			<?php
 
-			<main class="site-main" id="main">
+			if( is_page( 'homepage' ) ) {
+				get_template_part( 'template-parts/content', 'home' );
+			}
 
-				<?php while ( have_posts() ) : the_post(); ?>
+			else if ( is_page( 'our-story' ) ) {
+				get_template_part( 'template-parts/content', 'our-story' );
+			}
 
-					<?php
+			else if ( is_page( 'contact' ) ) {
+				get_template_part( 'template-parts/content', 'contact' );
+			}
 
-					if( is_page( 'homepage' ) ) {
-      					get_template_part( 'template-parts/content', 'home' );
-    				}
+			else {
+			   get_template_part( 'loop-templates/content', 'page' );
+			}
 
-					else {
-					   get_template_part( 'loop-templates/content', 'page' );
-					}
+			?>
 
-					?>
+		<?php endwhile; // end of the loop. ?>
 
-					<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-					?>
+	</main><!-- #main -->
 
-				<?php endwhile; // end of the loop. ?>
-
-			</main><!-- #main -->
-
-		</div><!-- #primary -->
-
-		<!-- Do the right sidebar check -->
-		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
-
-			<?php get_sidebar( 'right' ); ?>
-
-		<?php endif; ?>
-
-	</div><!-- .row -->
-
-</div><!-- Container end -->
-
-</div><!-- Wrapper end -->
+</div><!-- #page-wrapper -->
 
 <div id="js-heightControl" style="height: 0;">&nbsp;</div>
 

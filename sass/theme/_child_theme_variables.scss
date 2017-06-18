@@ -7,14 +7,33 @@
 
 //Colors
 
-$brand-primary:         #fece00; //Brand Primary Color
-$brand-secondary:		#000000; //Brand Secondary Color
-$brand-tertiary:		#ff0000; //Brand Tertiary Color
+$brand-primary:         #f58634; // Orange
+$brand-secondary:		#000000; // Brand Secondary Color
+$brand-tertiary:		#ff0000; // Brand Tertiary Color
 
-$body-font:             'open-sans', sans-serif; //Open Sans
-$header-font:           'cabin', sans-serif; //Cabin
+$header-font:           'nunito', sans-serif; // Nunito
+$body-font:             'Open Sans', sans-serif; // Open Sans
+
+//Fluid Typography Variables
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 14px;
+$max_font: 18px;
+
+// Fluid Header Variables
+$mod_1: 1.2; // mobile
+$mod_2: 1.5; // desktop
+
+
+
+
 
 //Mix-Ins
+
+//Text Shadow
+@mixin text-shadow {
+    text-shadow: 0 0 15px #000;
+}
 
 //Drop Shadow
 @mixin shadow {
@@ -63,8 +82,28 @@ $header-font:           'cabin', sans-serif; //Cabin
     transition-delay:         $delay;
 }
 
-// Basics of a navbar
-$navbar-height:                    60px;
-$navbar-margin-bottom:             0px;
-$navbar-border-radius:             0px;
+//Typography
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
 
