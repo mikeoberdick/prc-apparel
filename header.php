@@ -71,16 +71,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 					)
 				); ?>
 
-				<?php
-
-				global $woocommerce;
-
-				if ( sizeof( $woocommerce->cart->cart_contents) > 0 ) :
-					echo '<a href="' . $woocommerce->cart->get_checkout_url() . '" title="' . __( 'Checkout' ) . '">' . __( 'Checkout' ) . '<i class="fa fa-shopping-cart" aria-hidden="true"></a>';
-				endif;
-
-				?>
-
 			</div><!-- .container -->
 
 		</nav><!-- .site-navigation -->

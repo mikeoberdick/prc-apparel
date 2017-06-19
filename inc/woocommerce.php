@@ -5,6 +5,9 @@
  * @package understrap
  */
 
+// remove default sorting dropdown
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
 //Remove the breadcrumbs from the shop and single product page
 add_action( 'init', 'prc_remove_wc_breadcrumbs' );
 function prc_remove_wc_breadcrumbs() {
