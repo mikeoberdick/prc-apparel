@@ -45,6 +45,4 @@ get_header();
 
 </div><!-- #page-wrapper -->
 
-<div id="js-heightControl" style="height: 0;">&nbsp;</div>
-
 <?php get_footer(); ?>

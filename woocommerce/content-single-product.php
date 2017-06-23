@@ -24,27 +24,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php
-		/**
-		 * woocommerce_before_single_product_summary hook.
-		 *
-		 * @hooked woocommerce_show_product_sale_flash - 10
-		 * @hooked woocommerce_show_product_images - 20
-		 */
-		do_action( 'woocommerce_before_single_product_summary' );
-	?>
+<div class="container-fluid">
+	<div class="row">
 
-<div class = "product_wrapper">
+<?php do_action( 'woocommerce_before_single_product_summary' ); ?>
+
+<div class = "product_wrapper col-sm-12 col-md-6">
 <?php
 
 	$product_id = isset( $atts['product_id'] ) ? $atts['product_id'] : get_the_ID();
     $cf_funding = get_post_meta( $product_id, '_' . 'alg_crowdfunding_enabled', true );
 
      if ( $cf_funding === 'yes' ) {
-            echo '<div id = "product_details" class="col-sm-12 col-md-6">';
+            echo '<div id = "product_details" class = "col-sm-12 col-md-6">';
         }
 
-        else {
+    else {
         	echo '<div id = "product_details" class="col-sm-12 col-md-6 regProduct">';
         }
 
@@ -52,99 +47,81 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<a class = "shop_link" href = "<?php $shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) )?>">Shop</a>
 
-		<?php
-$active = get_post_meta( $product_id, '_active', true );
+<?php
 
-if ( $active === 'yes' ) {
+	$active = get_post_meta( $product_id, '_active', true );
 
-
-
-			/**
-			 * woocommerce_single_product_summary hook.
-			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_price - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
-			 * @hooked woocommerce_template_single_add_to_cart - 30
-			 * @hooked woocommerce_template_single_meta - 40
-			 * @hooked woocommerce_template_single_sharing - 50
-			 */
-			do_action( 'woocommerce_single_product_summary' );
-
+	if ( $active === 'yes' ) {
+		do_action( 'woocommerce_single_product_summary' );
 		}
 
-		else {
+	else {
 		the_title( '<h1 itemprop="name" class="product_title entry-title">', '</h1>' );
 
 		echo 
-' <!-- Begin MailChimp Signup Form -->
-<div id="mc_embed_signup">
-<form action="//prcapparel.us14.list-manage.com/subscribe/post?u=72c444e517c000d0bc8dc2204&amp;id=176610aa0f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll">
-    
-<div class="mc-field-group">
-    <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="e-mail address">
-</div>
-    <div id="mce-responses" class="clear">
-        <div class="response" id="mce-error-response" style="display:none"></div>
-        <div class="response" id="mce-success-response" style="display:none"></div>
-    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_72c444e517c000d0bc8dc2204_176610aa0f" tabindex="-1" value=""></div>
-    <div class="clear"><input type="submit" value="NOTIFY ME" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-    </div>
-</form>
-</div>
+			' <!-- Begin MailChimp Signup Form -->
+			<div id="mc_embed_signup">
+			<form action="//prcapparel.us14.list-manage.com/subscribe/post?u=72c444e517c000d0bc8dc2204&amp;id=176610aa0f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+			<div id="mc_embed_signup_scroll">
 
-<!--End mc_embed_signup-->';
+			<div class="mc-field-group">
+			<input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="e-mail address">
+			</div>
+			<div id="mce-responses" class="clear">
+			<div class="response" id="mce-error-response" style="display:none"></div>
+			<div class="response" id="mce-success-response" style="display:none"></div>
+			</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+			<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_72c444e517c000d0bc8dc2204_176610aa0f" tabindex="-1" value=""></div>
+			<div class="clear"><input type="submit" value="NOTIFY ME" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+			</div>
+			</form>
+			</div>
+
+			<!--End mc_embed_signup-->';
 
 		}
 
-		?>
+?>
 
 
-		<?php 
+<?php 
 		
-		$active = get_post_meta( $product_id, '_active', true );
-		if ( $active === 'yes' ) { ?>
-
+	$active = get_post_meta( $product_id, '_active', true );
+		
+	if ( $active === 'yes' ) { ?>
 		<?php
 		//Add the estimated shipping date
 
-		    global $post;
-		    $ship_date = get_post_meta( $post->ID, '_ship_date', true );
+    global $post;
+    $ship_date = get_post_meta( $post->ID, '_ship_date', true );
 		    
-		    if ( $ship_date ) {
-		        echo '<p id = "estShipping">Estimated Shipping: ' . get_post_meta( $post->ID, '_ship_date', true ) . '</p>';
-		    }
+    if ( $ship_date ) {
+        echo '<p id = "estShipping">Estimated Shipping: ' . get_post_meta( $post->ID, '_ship_date', true ) . '</p>';
+    }
 		    
-		?>
+?>
 
-		<div id = "product_links">
+<div id = "product_links">
+<a href="#" class = "sizing_icon" data-featherlight="#sizingInfo"><span>Sizing</span></a>
+<div id = "sizingInfo" class = "hidden">
 
-			<a href="#" class = "sizing_icon" data-featherlight="#sizingInfo"><span>Sizing</span></a>
-			<div id = "sizingInfo" class = "hidden">
+<div class = "row">
+<h3 class = "col-sm-12">Sizing</h3>
+</div>
 
-			<div class = "row">
-				<h3 class = "col-sm-12">Sizing</h3>
-			</div>
+<div class = "row">
+<div class = "col-sm-12 col-md-8">
+	<?php woocommerce_template_single_title(); ?>
+	<img src="<?php the_field('hero_image_1'); ?>" />
+</div>
 
-			<div class = "row">
-				<div class = "col-sm-12 col-md-8">
-					<?php woocommerce_template_single_title(); ?>
-					<img src="<?php the_field('hero_image_1'); ?>" />
-				</div>
-
-				<div class = "col-sm-12 col-md-4">
-					<p>Your Body – Measurements (inches)</p>
-					<p>Please follow the image measurements below.</p>
-					<img src = "/wp-content/uploads/2017/02/sizing_chart.jpg" />
-				</div>
-			</div>
-
-
+<div class = "col-sm-12 col-md-4">
+	<p>Your Body – Measurements (inches)</p>
+	<p>Please follow the image measurements below.</p>
+	<img src = "/wp-content/uploads/2017/06/sizing_chart.jpg" />
+</div>
+</div>
 <?php
-
 
 if (have_rows('sizes')) {
   while(have_rows('sizes')) {
@@ -157,72 +134,71 @@ if (have_rows('sizes')) {
   }
 }
 
-
 ?>
 
 <div class = "row">
-	<div class = "col-sm-12 table-responsive">
-		<h3>Garment Measurements</h3>
-			<table class="table table-striped">
-			  <thead>
-			    <tr>
-			    	<th>Size</th>
-			      <th>Small</th>
-			      <th>Medium</th>
-			      <th>Large</th>
-			      <th>X-Large</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-				  <?php if ($shoulder_array[0]) { ?>
-			    <tr>
-			      <th scope="row">Shoulder</th>
-			      <td><?php echo $shoulder_array[0]; ?></td>
-			      <td><?php echo $shoulder_array[1]; ?></td>
-			      <td><?php echo $shoulder_array[2]; ?></td>
-			      <td><?php echo $shoulder_array[3]; ?></td>
-			    </tr>
-				<?php } ?>
-				<?php if ($chest_array[0]) { ?>
-			    <tr>
-			      <th scope="row">Chest</th>
-			      <td><?php echo $chest_array[0]; ?></td>
-			      <td><?php echo $chest_array[1]; ?></td>
-			      <td><?php echo $chest_array[2]; ?></td>
-			      <td><?php echo $chest_array[3]; ?></td>
-			    </tr>
-			    <?php } ?>
-			    <?php if ($length_array[0]) { ?>
-			    <tr>
-			      <th scope="row">Length</th>
-			      <td><?php echo $length_array[0]; ?></td>
-			      <td><?php echo $length_array[1]; ?></td>
-			      <td><?php echo $length_array[2]; ?></td>
-			      <td><?php echo $length_array[3]; ?></td>
-			    </tr>
-			    <?php } ?>
-			    <?php if ($sleeve_opening_array[0]) { ?>
-			    <tr>
-			      <th scope="row">Sleeve Opening</th>
-			      <td><?php echo $sleeve_opening_array[0]; ?></td>
-			      <td><?php echo $sleeve_opening_array[1]; ?></td>
-			      <td><?php echo $sleeve_opening_array[2]; ?></td>
-			      <td><?php echo $sleeve_opening_array[3]; ?></td>
-			    </tr>
-			    <?php } ?>
-			    <?php if ($waist_array[0]) { ?>
-			    <tr>
-			      <th scope="row">Waist</th>
-			      <td><?php echo $waist_array[0]; ?></td>
-			      <td><?php echo $waist_array[1]; ?></td>
-			      <td><?php echo $waist_array[2]; ?></td>
-			      <td><?php echo $waist_array[3]; ?></td>
-			    </tr>
-			    <?php } ?>
-			  </tbody>
-			</table>
-		</div>
-	</div>
+<div class = "col-sm-12 table-responsive">
+<h3>Garment Measurements</h3>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Size</th>
+<th>Small</th>
+<th>Medium</th>
+<th>Large</th>
+<th>X-Large</th>
+</tr>
+</thead>
+<tbody>
+<?php if ($shoulder_array[0]) { ?>
+<tr>
+<th scope="row">Shoulder</th>
+<td><?php echo $shoulder_array[0]; ?></td>
+<td><?php echo $shoulder_array[1]; ?></td>
+<td><?php echo $shoulder_array[2]; ?></td>
+<td><?php echo $shoulder_array[3]; ?></td>
+</tr>
+<?php } ?>
+<?php if ($chest_array[0]) { ?>
+<tr>
+<th scope="row">Chest</th>
+<td><?php echo $chest_array[0]; ?></td>
+<td><?php echo $chest_array[1]; ?></td>
+<td><?php echo $chest_array[2]; ?></td>
+<td><?php echo $chest_array[3]; ?></td>
+</tr>
+<?php } ?>
+<?php if ($length_array[0]) { ?>
+<tr>
+<th scope="row">Length</th>
+<td><?php echo $length_array[0]; ?></td>
+<td><?php echo $length_array[1]; ?></td>
+<td><?php echo $length_array[2]; ?></td>
+<td><?php echo $length_array[3]; ?></td>
+</tr>
+<?php } ?>
+<?php if ($sleeve_opening_array[0]) { ?>
+<tr>
+<th scope="row">Sleeve Opening</th>
+<td><?php echo $sleeve_opening_array[0]; ?></td>
+<td><?php echo $sleeve_opening_array[1]; ?></td>
+<td><?php echo $sleeve_opening_array[2]; ?></td>
+<td><?php echo $sleeve_opening_array[3]; ?></td>
+</tr>
+<?php } ?>
+<?php if ($waist_array[0]) { ?>
+<tr>
+<th scope="row">Waist</th>
+<td><?php echo $waist_array[0]; ?></td>
+<td><?php echo $waist_array[1]; ?></td>
+<td><?php echo $waist_array[2]; ?></td>
+<td><?php echo $waist_array[3]; ?></td>
+</tr>
+<?php } ?>
+</tbody>
+</table>
+</div>
+</div>
 
 <div class = "row">
 	<div class = "col-sm-12">
@@ -234,44 +210,40 @@ if (have_rows('sizes')) {
 
 </div><!-- #sizingInfo -->
 
-			<a href="#" class = "shipping_icon" data-featherlight="#shippingInfo"><span>Shipping</span></a>
-				<div id = "shippingInfo" class = "hidden row">
-					<div class = "col-sm-12">
-						<?php the_field('shipping_information', 'option'); ?>
-					</div>
-				</div>
 
-			<a href="#" class = "help_icon" data-featherlight="#helpInfo"><span>Help</span></a>
-			<div id = "helpInfo" class = "hidden row">
-					<div class = "col-sm-12">
-						<?php the_field('help_information', 'option'); ?>
 
+<!-- SHIPPING INFO -->
+
+<a href="#" class = "shipping_icon" data-featherlight="#shippingInfo"><span>Shipping</span></a>
+	<div id = "shippingInfo" class = "hidden row">
+		<div class = "col-sm-12">
+			<?php the_field('shipping_information', 'option'); ?>
+		</div>
+	</div>
+
+
+<!-- HELP INFO -->
+
+<a href="#" class = "help_icon" data-featherlight="#helpInfo"><span>Help</span></a>
+<div id = "helpInfo" class = "hidden row">
+		<div class = "col-sm-12">
+			<?php the_field('help_information', 'option'); ?>
 		</div>
 </div>
 			
-		</div><!-- product links -->
+</div><!-- product links -->
 
-		<?php } ?>
+<?php } ?>
 
 	</div><!-- #product_details -->
-	</div><!-- .product_wrapper -->
+</div><!-- .product_wrapper -->
 
-	<?php
-		/**
-		 * woocommerce_after_single_product_summary hook.
-		 *
-		 * @hooked woocommerce_output_product_data_tabs - 10
-		 * @hooked woocommerce_upsell_display - 15
-		 * @hooked woocommerce_output_related_products - 20
-		 */
-		/***Remove the after_single_product_summary***/
-		//do_action( 'woocommerce_after_single_product_summary' );
-	?>
+</div>
+</div><!-- .container-fluid -->
 
-	</div><!-- .container-fluid -->
-
-	<div id = "product_specs_wrapper" class = "container-fluid">
-		<div id = "product_specs" class = "container">
+<div id = "product_specs_wrapper" class = "container-fluid">
+	<div id = "product_specs" class = "container">
+		<div class = "row">
 			<div class = "col-sm-12 col-md-4">
 				
 				<h3>Description</h3>
@@ -303,8 +275,43 @@ if (have_rows('sizes')) {
 			</div>
 		</div>
 	</div>
+</div><!-- .container-fluid -->
 
-	<meta itemprop="url" content="<?php the_permalink(); ?>" />
+	<div id = "hero_images" class = "container-fluid">
+		<div class = "row">
+			<?php if( get_field('hero_image_1') ): ?>
+				<div class = "col-sm-12">
+					<img src="<?php the_field('hero_image_1'); ?>" />
+				</div>
+			<?php endif; ?>
+
+		</div><!-- .row -->
+		
+		<div class = "row">
+			<?php if( get_field('hero_image_2') ): ?>
+				<div class = "col-sm-12 col-md-6" style = "padding-right: 0;">
+					<img src="<?php the_field('hero_image_2'); ?>" />
+				</div>
+			<?php endif; ?>
+
+			<?php if( get_field('hero_image_3') ): ?>
+				<div class = "col-sm-12 col-md-6" style = "padding-left: 0;">
+					<img src="<?php the_field('hero_image_3'); ?>" />
+				</div>
+			<?php endif; ?>
+
+		</div><!-- .row -->
+
+		<div class = "row">
+			<?php if( get_field('hero_image_4') ): ?>
+				<div class = "col-sm-12">
+					<img src="<?php the_field('hero_image_4'); ?>" />
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+
+<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
 </div><!-- #product-<?php the_ID(); ?> -->
 

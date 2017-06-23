@@ -9319,19 +9319,23 @@ a:hover {
       @media screen and (min-width: 1200px) {
         #navbarNavDropdown a {
           font-size: 16px; } }
+    #navbarNavDropdown a:hover {
+      color: #f58634; }
 
 .navbar {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); }
+
+.woocommerce .navbar {
   margin-bottom: 50px; }
+
+.single-product .navbar {
+  margin-bottom: 0; }
 
 /*------------------------------------------------*/
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
 #page-wrapper {
   padding-bottom: 50px; }
-
-.home .navbar {
-  margin-bottom: 0; }
 
 .home #page-wrapper {
   padding-bottom: 0; }
@@ -9376,7 +9380,11 @@ a:hover {
   width: 100%;
   height: 400px;
   border: #ccc solid 1px;
-  margin: 20px 0; }
+  border-top: 0;
+  margin: 0 0 20px; }
+
+#contact .container-fluid .col-sm-12 {
+  padding: 0 !important; }
 
 #contact a {
   font-size: 18px;
@@ -9412,7 +9420,7 @@ a:hover {
   width: 48%;
   margin-right: 2%;
   clear: none; }
-  @media (min-width: 768px) {
+  @media (max-width: 991px) {
     #contact .fName {
       float: none;
       width: 100%;
@@ -9423,7 +9431,7 @@ a:hover {
   float: left;
   width: 48%;
   clear: none; }
-  @media (min-width: 768px) {
+  @media (max-width: 991px) {
     #contact .lName {
       float: none;
       width: 100%;
@@ -9457,7 +9465,14 @@ a:hover {
   color: #fff !important;
   background-color: #f58634 !important;
   border-color: #f58634 !important;
-  border-radius: 5px; }
+  border-radius: 5px;
+  float: right; }
+  @media (max-width: 991px) {
+    .nf-form-content input[type="submit"],
+    .nf-form-content input[type="button"],
+    .nf-form-content button {
+      float: none;
+      width: 100% !important; } }
   .nf-form-content input[type="submit"]:hover,
   .nf-form-content input[type="button"]:hover,
   .nf-form-content button:hover {
@@ -9558,66 +9573,105 @@ a:hover {
   display: none; }
 
 .bx-wrapper {
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border: 0;
-  background: transparent; }
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  margin-top: 15px; }
 
 #wc_image_gallery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
   visibility: hidden; }
+  #wc_image_gallery img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%; }
 
-#wc_image_gallery img {
-  flex-shrink: 0;
-  min-width: 100%;
-  min-height: 100%; }
+.hidden {
+  display: none; }
 
 .shop_link {
-  font-size: 10px;
-  font-size: 1rem;
+  font-size: 10px !important;
   text-transform: uppercase;
   text-decoration: none;
   color: #c2c2c2; }
-
-.shop_link:hover {
-  color: #c2c2c2; }
+  .shop_link:hover {
+    text-decoration: none;
+    color: #c2c2c2; }
 
 #product_details {
   margin-top: 100px;
   text-align: center;
-  align-self: center; }
-
-#product_details .price {
-  display: flex;
-  justify-content: center;
-  font-size: 4rem; }
-
-#product_details .price > * {
-  -webkit-flex-basis: 49%;
-  -moz-flex-basis: 49%;
-  -ms-flex-preferred-size: 49%;
-  flex-basis: 49%; }
-
-#product_details .button {
-  float: none; }
-
-#product_details .quantity {
-  display: none; }
+  align-self: center;
+  font-family: "nunito", sans-serif;
+  font-size: 14px;
+  color: #333; }
+  #product_details .price {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    -webkit-flex-basis: 49%;
+    -moz-flex-basis: 49%;
+    -ms-flex-preferred-size: 49%;
+    flex-basis: 49%;
+    color: #333; }
+  #product_details .small_price {
+    display: block;
+    font-size: 12px;
+    line-height: 1em; }
+  #product_details .sale_price {
+    margin-right: 25px;
+    order: 1; }
+  #product_details .regular_price {
+    order: 2;
+    color: #c2c2c2;
+    padding-left: 0.25em;
+    text-decoration: line-through; }
+  #product_details #shopPercentage {
+    font-weight: bold; }
+  #product_details .button {
+    float: none; }
+  #product_details .quantity {
+    display: none; }
+  #product_details .variations .label {
+    display: none; }
+  #product_details .variations td select {
+    padding: 10px 25px;
+    border: solid 1px #0f2130;
+    border-radius: 0;
+    text-transform: uppercase;
+    color: #666 !important;
+    background-color: #ececec;
+    font-size: 12px;
+    font-weight: 500; }
+  #product_details .cart {
+    margin-bottom: 10px !important; }
+  #product_details #estShipping {
+    border: solid 1px #0f2130;
+    padding: 10px 25px;
+    font-size: 11px;
+    color: #0f2130;
+    font-weight: bold;
+    max-width: 450px;
+    margin: 0 auto; }
+  #product_details .single_add_to_cart_button {
+    text-transform: uppercase;
+    color: #fff !important;
+    background-color: #f58634 !important;
+    border-color: #f58634 !important;
+    border-radius: 5px;
+    height: 42px; }
 
 #prodCountdown {
   margin-bottom: 15px; }
-
-#funding_ending {
-  display: inline;
-  font-size: 11px;
-  font-size: 1.1rem;
-  color: #0f2130;
-  text-transform: uppercase;
-  font-weight: bold; }
+  #prodCountdown #funding_ending {
+    display: inline;
+    font-size: 11px;
+    color: #0f2130;
+    text-transform: uppercase;
+    font-weight: bold; }
+  #prodCountdown #funding_end_date {
+    display: inline;
+    margin-left: 5px; }
 
 #percentFunded {
   font-size: 11px;
@@ -9625,21 +9679,10 @@ a:hover {
   color: #0f2130;
   text-align: center; }
 
-#funding_end_date {
-  display: inline;
-  margin-left: 5px; }
-
-.product_title {
-  margin-top: 50px !important; }
-
-#product_details .variations td select {
-  padding: 10px 25px;
-  border: solid 1px #0f2130;
-  border-radius: 0;
-  text-transform: uppercase; }
-
-#product_details .cart {
-  margin-bottom: 10px !important; }
+.single-product .product_title {
+  margin-top: 50px !important;
+  color: #333;
+  font-size: 36px; }
 
 #mc_embed_signup .button {
   color: #ffffff;
@@ -9652,21 +9695,27 @@ a:hover {
   text-align: center;
   text-transform: uppercase; }
 
-#estShipping {
-  border: solid 1px #0f2130;
-  padding: 10px 25px;
-  font-size: 11px;
-  font-size: 1.1rem;
-  color: #0f2130;
-  font-weight: bold;
-  max-width: 450px;
-  margin: 0 auto; }
+.featherlight .featherlight-close-icon {
+  top: 10px !important;
+  right: 10px !important; }
 
-.featherlight-content {
-  max-width: 85%; }
-
-.featherlight-content h5 {
-  font-weight: bold; }
+.featherlight .featherlight-content {
+  max-width: 85%;
+  font-size: 14px;
+  color: #333; }
+  .featherlight .featherlight-content h3 {
+    color: #333;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px; }
+  .featherlight .featherlight-content h5 {
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px; }
 
 .sizing_icon {
   background: url(//cdn.shopify.com/s/files/1/0070/1922/t/12/assets/icon-sizing.svg?11074636442064151721) no-repeat;
@@ -9698,7 +9747,6 @@ a:hover {
 
 #product_links a {
   font-size: 10px;
-  font-size: 1rem;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -9714,19 +9762,22 @@ a:hover {
 #product_specs_wrapper {
   clear: both;
   background-color: #fafafa;
-  padding-bottom: 40px; }
+  padding-bottom: 40px;
+  color: #333; }
+  #product_specs_wrapper #product_specs h3 {
+    font-size: 10px;
+    color: #0f2130;
+    text-transform: uppercase;
+    margin: 5em 0 2.5em;
+    font-weight: bold; }
+  #product_specs_wrapper #product_specs p {
+    font-size: 14px; }
 
-#product_specs h3 {
-  font-size: 10px;
-  font-size: 1rem;
-  color: #0f2130;
-  text-transform: uppercase;
-  margin: 5em 0 2.5em;
-  font-weight: bold; }
+#hero_images .col-sm-12 {
+  padding: 0; }
 
-#product_specs p {
-  font-size: 1.4rem;
-  line-height: 1.6em; }
+#hero_images .col-md-6 {
+  padding: 0; }
 
 #hero_images img {
   width: 100%; }
@@ -9840,6 +9891,11 @@ a:hover {
       font-size: 10px; }
   #bottomFooter .footerSocial {
     text-align: right; }
+    #bottomFooter .footerSocial a {
+      font-size: 24px;
+      margin-right: 5px; }
+      #bottomFooter .footerSocial a:last-of-type {
+        margin-right: 0; }
     @media (max-width: 991px) {
       #bottomFooter .footerSocial {
         text-align: center; } }

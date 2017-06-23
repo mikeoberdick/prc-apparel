@@ -14,11 +14,11 @@ jQuery(document).ready(function(){
 
   jQuery('.bxslider').bxSlider({
   	auto: true,
+  	adaptiveHeight: true,
+  	adaptiveHeightSpeed: 500,
   	onSliderLoad: function() {
   		jQuery("#wc_image_gallery").css("visibility", "visible");
   	}
   	});
 
 });
-
-AOS.init();
