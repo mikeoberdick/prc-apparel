@@ -9305,6 +9305,9 @@ a:hover {
 
 #navbarNavDropdown {
   justify-content: center; }
+  #navbarNavDropdown .cart-contents {
+    font-size: 24px;
+    color: #f58634; }
   #navbarNavDropdown .current-menu-item a {
     color: #f58634; }
   #navbarNavDropdown a {

@@ -70,7 +70,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						'walker'          => new WP_Bootstrap_Navwalker(),
 					)
 				); ?>
-
+				
 			</div><!-- .container -->
 
 		</nav><!-- .site-navigation -->

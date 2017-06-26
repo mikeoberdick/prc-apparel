@@ -20,38 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-get_header( 'shop' ); ?>
-
-<?php
-		/**
-		 * woocommerce_before_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		/***Remove the default wrapper***/
-			//do_action( 'woocommerce_before_main_content' );
-	?>
-
-	<?php
-	/**
-	 * woocommerce_before_single_product hook.
-	 *
-	 * @hooked wc_print_notices - 10
-	 */
-	 do_action( 'woocommerce_before_single_product' );
-
-	 if ( post_password_required() ) {
-	 	echo get_the_password_form();
-	 	return;
-	 }
-?>
+get_header(); ?>
 
 <!-- Add the bootstrap markup -->
 <div id="main-content">
 	<div class="container-fluid">
 		<div id="content-area" class="clearfix row">
-			
+
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php wc_get_template_part( 'content', 'single-product' ); ?>
@@ -91,26 +66,6 @@ get_header( 'shop' ); ?>
 			<?php endif; ?>
 		</div>
 	</div>
+</div> <!-- #content-area -->
 
-		<?php
-		/**
-		 * woocommerce_after_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		/***Remove the default closing tags for wrapper***/
-		//do_action( 'woocommerce_after_main_content' );
-		//Close the main content area div
-		echo '</div> <!-- #content-area -->';
-	?>
-
-	<?php
-		/**
-		 * woocommerce_sidebar hook.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
-
-<?php get_footer( 'shop' ); ?>
+<?php get_footer(); ?>

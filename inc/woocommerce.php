@@ -5,6 +5,20 @@
  * @package understrap
  */
 
+function add_cart_btn ($items) {
+
+    if ( WC()->cart->get_cart_contents_count() ) {
+
+        return $items .= '<a class="cart-contents" href="' . wc_get_cart_url() . '"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>';
+    }
+
+    else {
+        return $items;
+    }
+  
+}
+add_filter('wp_nav_menu_items','add_cart_btn');
+
 // remove default sorting dropdown
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 
