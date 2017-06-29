@@ -9354,7 +9354,7 @@ a:hover {
     justify-content: center;
     text-shadow: 0 0 15px #000; }
   .home .hpHero .hpCallout h2 {
-    color: #ffffff; }
+    color: #ffffff !important; }
 
 #our-story .heroContainer {
   background-size: cover;
@@ -9789,6 +9789,14 @@ a:hover {
   list-style: disc;
   margin-left: 35px; }
 
+.woocommerce-message {
+  border-top-color: #f58634; }
+  .woocommerce-message:before {
+    color: #f58634; }
+    .woocommerce-message:before a {
+      background-color: #f58634;
+      color: white; }
+
 /*------------------------------------------------*/
 /*---------------[RESPONSIVE LAYOUTS]-------------*/
 /*------------------------------------------------*/
@@ -9897,6 +9905,8 @@ a:hover {
     #bottomFooter .footerSocial a {
       font-size: 24px;
       margin-right: 5px; }
+      #bottomFooter .footerSocial a:hover {
+        color: #f58634; }
       #bottomFooter .footerSocial a:last-of-type {
         margin-right: 0; }
     @media (max-width: 991px) {
