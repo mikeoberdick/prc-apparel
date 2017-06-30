@@ -11,7 +11,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
-			<p><?php the_field('our_story'); ?></p>
+			<?php the_field('our_story'); ?>
 		</div><!-- .col-sm-12 -->
 	</div><!-- .row -->
 

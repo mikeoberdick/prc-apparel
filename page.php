@@ -33,6 +33,10 @@ get_header();
 				get_template_part( 'template-parts/content', 'contact' );
 			}
 
+			else if ( is_page( 'media' ) ) {
+				get_template_part( 'template-parts/content', 'media' );
+			}
+
 			else {
 			   get_template_part( 'loop-templates/content', 'page' );
 			}

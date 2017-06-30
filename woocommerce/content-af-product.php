@@ -120,17 +120,17 @@ if ( $active === 'yes' ) { ?>
     $target_items     = get_post_meta( $product_id, "_" . "alg_crowdfunding_goal_items", true );
 
 if ( $cf_funding === 'yes' && $current_sum !='' && $target_sum !='') {
-    $percentage = $current_sum / $target_sum * 100;
+    $percentage = round($current_sum / $target_sum * 100);
         echo '<span>Funding: </span><span id = "shopPercentage">' . $percentage . '%</span></p>';
 }
 
 elseif ( $cf_funding === 'yes' && $current_backers !='' && $target_backers !='' ) {
-	$percentage = $current_backers / $target_backers * 100;
+	$percentage = round($current_backers / $target_backers * 100);
 		echo '<span>Funding: </span><span id = "shopPercentage">' . $percentage . '%</span></p>';
 }
 
 elseif ( $cf_funding === 'yes' && $current_items !='' && $target_items !='' ) {
-	$percentage = $current_items / $target_items * 100;
+	$percentage = round($current_items / $target_items * 100);
 		echo '<span>Funding: </span><span id = "shopPercentage">' . $percentage . '%</span></p>';
 } ?>
     </div>

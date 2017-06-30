@@ -9340,6 +9340,18 @@ a:hover {
 #page-wrapper {
   padding-bottom: 50px; }
 
+.heroContainer {
+  background-size: cover;
+  background-position: 50%;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 25px; }
+  .heroContainer h1 {
+    color: #ffffff;
+    text-shadow: 0 0 15px #000; }
+
 .home #page-wrapper {
   padding-bottom: 0; }
 
@@ -9355,17 +9367,6 @@ a:hover {
     text-shadow: 0 0 15px #000; }
   .home .hpHero .hpCallout h2 {
     color: #ffffff !important; }
-
-#our-story .heroContainer {
-  background-size: cover;
-  background-position: 50%;
-  height: 25vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; }
-  #our-story .heroContainer h1 {
-    color: #ffffff;
-    text-shadow: 0 0 15px #000; }
 
 #our-story .pageSection {
   margin-bottom: 50px; }

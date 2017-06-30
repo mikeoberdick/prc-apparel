@@ -104,6 +104,22 @@ a {
 	padding-bottom: 50px;
 }
 
+.heroContainer {
+	background-size: cover;
+	background-position: 50%;
+	height: 25vh;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 25px;
+
+    h1 {
+    	color: #ffffff;
+    	@include text-shadow;
+    }
+ 
+}
+
 // HOMEPAGE
 .home {
 
@@ -135,21 +151,6 @@ a {
 // OUR STORY
 
 #our-story {
-
-.heroContainer {
-	background-size: cover;
-	background-position: 50%;
-	height: 25vh;
-	display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    h1 {
-    	color: #ffffff;
-    	@include text-shadow;
-    }
- 
-}
 
 .pageSection {
 	margin-bottom: 50px;

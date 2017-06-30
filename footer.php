@@ -53,10 +53,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<div class="col-md-6 footerSocial">
 				<div>
-					<a href = "<?php the_field('twitter'); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-					<a href = "<?php the_field('instagram'); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-					<a href = "<?php the_field('vimeo'); ?>"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
-					<a href = "<?php the_field('pinterest'); ?>"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+					<a target = "_blank" href = "<?php the_field('twitter'); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a target = "_blank" href = "<?php the_field('instagram'); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					<a target = "_blank" href = "<?php the_field('vimeo'); ?>"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
+					<a target = "_blank" href = "<?php the_field('pinterest'); ?>"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
 				</div>
 			</div><!-- .col-md-6 -->
 		</div><!-- .row -->
