@@ -155,6 +155,10 @@ a {
 .pageSection {
 	margin-bottom: 50px;
 
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+
 	h3 {
 		color: #000000;
 		padding-bottom: 15px;
@@ -400,7 +404,7 @@ a {
 	}
 
 	.woocommerce-loop-product__title {
-		font-size: 30px;
+		font-size: 20px;
 		color: #363636;
 	}
 

@@ -32,14 +32,15 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		<a href="<?php the_permalink(); ?>">
 			<?php the_post_thumbnail('prc-shop-thumb'); ?>
 		</a>
-		
-		<div class = "col-sm-12">
+		<div class="row">
+			<div class = "col-sm-8">
 			<?php do_action( 'woocommerce_shop_loop_item_title' ); ?>
-		</div><!-- .col-sm-12 -->
+		</div><!-- .col-sm-8 -->
 
-		<div class="col-sm-12">
+		<div class="col-sm-4">
 			<?php do_action( 'woocommerce_after_shop_loop_item_title' ); ?>
-		</div><!-- .col-sm-12 -->
+		</div><!-- .col-sm-4 -->
+		</div>
 	</div><!-- #shopSmall -->
 </div><!-- .col-xs-12 col-sm-6 col-md-4 -->
 

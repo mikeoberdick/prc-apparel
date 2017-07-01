@@ -150,6 +150,47 @@ if (have_rows('sizes')) {
 
 ?>
 
+<?php if ($waist_array[0]): ?>
+
+<div class = "row">
+<div class = "col-sm-12 table-responsive">
+<h3>Garment Measurements</h3>
+<table class="table table-striped">
+<tbody>
+
+<tr>
+<th scope="row">Waist</th>
+
+<?php 
+
+$rows = get_field('sizes');
+if($rows)
+{
+	foreach($rows as $row)
+	{
+		echo '<td>' . $row['waist'] . '</td>';
+	}
+}
+?>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class = "row">
+	<div class = "col-sm-12">
+		<p><em>Please Note: All measurements were designed with the average CrossFit/athletic body in mind.  If you are in between sizes please size up or down, depending if you like a looser or tighter fit.</em></p>
+
+		<p>For any sizing, styling, a general shoutout, or other inquiries, please contact us at <a href = "mailto:andre@prcapparel.com">andre@prcapparel.com</a>.  We love hearing from you guys!</p>
+	</div>
+</div>
+
+<?php endif; ?>
+
+<?php if (!$waist_array[0]): ?>
+
 <div class = "row">
 <div class = "col-sm-12 table-responsive">
 <h3>Garment Measurements</h3>
@@ -164,7 +205,7 @@ if (have_rows('sizes')) {
 </tr>
 </thead>
 <tbody>
-<?php if ($shoulder_array[0]) { ?>
+<?php if ($shoulder_array[0]): ?>
 <tr>
 <th scope="row">Shoulder</th>
 <td><?php echo $shoulder_array[0]; ?></td>
@@ -172,8 +213,8 @@ if (have_rows('sizes')) {
 <td><?php echo $shoulder_array[2]; ?></td>
 <td><?php echo $shoulder_array[3]; ?></td>
 </tr>
-<?php } ?>
-<?php if ($chest_array[0]) { ?>
+<?php endif; ?>
+<?php if ($chest_array[0]): ?>
 <tr>
 <th scope="row">Chest</th>
 <td><?php echo $chest_array[0]; ?></td>
@@ -181,8 +222,8 @@ if (have_rows('sizes')) {
 <td><?php echo $chest_array[2]; ?></td>
 <td><?php echo $chest_array[3]; ?></td>
 </tr>
-<?php } ?>
-<?php if ($length_array[0]) { ?>
+<?php endif; ?>
+<?php if ($length_array[0]): ?>
 <tr>
 <th scope="row">Length</th>
 <td><?php echo $length_array[0]; ?></td>
@@ -190,8 +231,8 @@ if (have_rows('sizes')) {
 <td><?php echo $length_array[2]; ?></td>
 <td><?php echo $length_array[3]; ?></td>
 </tr>
-<?php } ?>
-<?php if ($sleeve_opening_array[0]) { ?>
+<?php endif; ?>
+<?php if ($sleeve_opening_array[0]): ?>
 <tr>
 <th scope="row">Sleeve Opening</th>
 <td><?php echo $sleeve_opening_array[0]; ?></td>
@@ -199,16 +240,8 @@ if (have_rows('sizes')) {
 <td><?php echo $sleeve_opening_array[2]; ?></td>
 <td><?php echo $sleeve_opening_array[3]; ?></td>
 </tr>
-<?php } ?>
-<?php if ($waist_array[0]) { ?>
-<tr>
-<th scope="row">Waist</th>
-<td><?php echo $waist_array[0]; ?></td>
-<td><?php echo $waist_array[1]; ?></td>
-<td><?php echo $waist_array[2]; ?></td>
-<td><?php echo $waist_array[3]; ?></td>
-</tr>
-<?php } ?>
+<?php endif; ?>
+
 </tbody>
 </table>
 </div>
@@ -222,9 +255,9 @@ if (have_rows('sizes')) {
 	</div>
 </div>
 
+<?php endif; ?>
+
 </div><!-- #sizingInfo -->
-
-
 
 <!-- SHIPPING INFO -->
 

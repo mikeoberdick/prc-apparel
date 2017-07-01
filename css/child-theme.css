@@ -9370,6 +9370,8 @@ a:hover {
 
 #our-story .pageSection {
   margin-bottom: 50px; }
+  #our-story .pageSection:last-of-type {
+    margin-bottom: 0; }
   #our-story .pageSection h3 {
     color: #000000;
     padding-bottom: 15px;
@@ -9555,7 +9557,7 @@ a:hover {
   #shopSmall a {
     color: #363636 !important; }
   #shopSmall .woocommerce-loop-product__title {
-    font-size: 30px;
+    font-size: 20px;
     color: #363636; }
   #shopSmall img {
     margin-bottom: 15px; }

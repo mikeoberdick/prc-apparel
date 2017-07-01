@@ -31,7 +31,7 @@ get_header(); ?>
     } else { ?>
 
 <!-- SHOP PAGE -->
-
+<div id = "page-wrapper">
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
@@ -99,6 +99,7 @@ endwhile; ?>
 
 <?php do_action( 'woocommerce_after_shop_loop' ); ?>
 
+</div>
 </div>
 </div>
 
