@@ -177,11 +177,19 @@ a {
 }
 
 // MEDIA
-
 #media {
-	.mediaContent {
+	.mediaDownloads {
 		align-items: center;
-		text-align: center;
+		i {
+			font-size: 100px;
+			color: red;
+		}
+			@include media-breakpoint-down(sm) {
+				text-align: center;
+			h5 {
+				margin-top: 10px;
+			}
+		}
 	}
 }
 
