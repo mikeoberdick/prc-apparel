@@ -9576,12 +9576,15 @@ a:hover {
     float: right; }
   #shopSmall .regular_price {
     display: none; }
-  #shopSmall .sale_price .small_price {
-    display: none; }
-  #shopSmall .sale_price span .woocommerce-Price-amount .amount:after {
-    content: ' SALE';
-    color: green;
-    font-size: 10px; }
+  #shopSmall .price {
+    font-size: 12px;
+    color: #b2b2b2;
+    font-family: Open Sans,sans-serif;
+    font-weight: normal; }
+    #shopSmall .price del {
+      display: none; }
+    #shopSmall .price ins {
+      font-weight: normal; }
 
 .regProduct .small_price {
   display: none; }
@@ -9624,58 +9627,91 @@ a:hover {
   #product_details .price {
     display: flex;
     justify-content: center;
-    font-size: 40px;
+    font-size: 2rem;
     -webkit-flex-basis: 49%;
     -moz-flex-basis: 49%;
     -ms-flex-preferred-size: 49%;
     flex-basis: 49%;
     color: #333; }
-  #product_details .small_price {
-    display: block;
-    font-size: 12px;
-    line-height: 1em; }
-  #product_details .sale_price {
-    margin-right: 25px;
-    order: 1; }
-  #product_details .regular_price {
-    order: 2;
-    color: #c2c2c2;
-    padding-left: 0.25em;
-    text-decoration: line-through; }
-  #product_details #shopPercentage {
-    font-weight: bold; }
-  #product_details .button {
-    float: none; }
-  #product_details .quantity {
-    display: none; }
-  #product_details .variations .label {
-    display: none; }
-  #product_details .variations td select {
-    padding: 10px 25px;
-    border: solid 1px #0f2130;
-    border-radius: 0;
-    text-transform: uppercase;
-    color: #666 !important;
-    background-color: #ececec;
-    font-size: 12px;
-    font-weight: 500; }
-  #product_details .cart {
-    margin-bottom: 10px !important; }
-  #product_details #estShipping {
-    border: solid 1px #0f2130;
-    padding: 10px 25px;
-    font-size: 11px;
-    color: #0f2130;
-    font-weight: bold;
-    max-width: 450px;
-    margin: 0 auto; }
-  #product_details .single_add_to_cart_button {
-    text-transform: uppercase;
-    color: #fff !important;
-    background-color: #f58634 !important;
-    border-color: #f58634 !important;
-    border-radius: 5px;
-    height: 42px; }
+    #product_details .price ins {
+      margin-right: 25px;
+      order: 1;
+      text-decoration: none;
+      font-weight: normal; }
+      #product_details .price ins:after {
+        content: 'Regular';
+        display: block;
+        color: #c2c2c2;
+        font-size: 12px;
+        line-height: 1em; }
+    #product_details .price del {
+      order: 2;
+      color: #c2c2c2;
+      padding-left: .25em;
+      text-decoration: line-through; }
+      #product_details .price del:after {
+        content: 'Pre-Order';
+        display: block;
+        color: #333;
+        font-size: 12px;
+        line-height: 1em; }
+
+.small_price {
+  display: block;
+  font-size: 12px;
+  line-height: 1em; }
+
+.sale_price {
+  margin-right: 25px;
+  order: 1; }
+
+.regular_price {
+  order: 2;
+  color: #c2c2c2;
+  padding-left: 0.25em;
+  text-decoration: line-through; }
+
+#shopPercentage {
+  font-weight: bold; }
+
+.button {
+  float: none; }
+
+.quantity {
+  display: none; }
+
+.variations .label {
+  display: none; }
+
+.variations td select {
+  padding: 10px 25px;
+  border: solid 1px #0f2130;
+  border-radius: 0;
+  text-transform: uppercase;
+  color: #666 !important;
+  background-color: #ececec;
+  font-size: 12px;
+  font-weight: 500; }
+
+.cart {
+  margin-bottom: 10px !important; }
+
+#estShipping {
+  border: solid 1px #0f2130;
+  padding: 10px 25px;
+  font-size: 11px;
+  color: #0f2130;
+  font-weight: bold;
+  max-width: 450px;
+  margin: 0 auto; }
+
+.single_add_to_cart_button {
+  text-transform: uppercase;
+  color: #fff !important;
+  background-color: #f58634 !important;
+  border-color: #f58634 !important;
+  border-radius: 5px;
+  height: 42px; }
 
 #prodCountdown {
   margin-bottom: 15px; }
