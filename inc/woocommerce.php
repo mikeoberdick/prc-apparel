@@ -201,7 +201,7 @@ function prc_save_custom_fields( $post_id ) {
 
     }
 
-    if ( ! empty( $_POST['_shop'] ) ) {
+    if ( ! empty( $_POST['_shop']) || empty( $_POST['_shop'] ) ) {
 
             update_post_meta( $post_id, '_shop', esc_html( $_POST['_shop'] ) );
 

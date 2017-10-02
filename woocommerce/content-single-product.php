@@ -318,7 +318,12 @@ if($rows)
 
 			<div class = "col-sm-12 col-md-4">
 				<h3>Shop</h3>
-				<?php the_field('shop_description', 'option'); ?>
+				<?php 
+					$shopDescription = get_post_meta( $post->ID, '_shop', true );
+				if ( $shopDescription ) {
+					echo '<p>' . $shopDescription . '</p>';
+				} else
+				echo the_field('shop_description', 'option'); ?>
 			</div>
 		</div>
 	</div>
