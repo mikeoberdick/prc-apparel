@@ -72,26 +72,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 	else {
 		the_title( '<h1 itemprop="name" class="product_title entry-title">', '</h1>' );
 
-		echo 
-			' <!-- Begin MailChimp Signup Form -->
-			<div id="mc_embed_signup">
-			<form action="//prcapparel.us14.list-manage.com/subscribe/post?u=72c444e517c000d0bc8dc2204&amp;id=176610aa0f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-			<div id="mc_embed_signup_scroll">
+		echo '
 
-			<div class="mc-field-group">
-			<input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="e-mail address">
-			</div>
-			<div id="mce-responses" class="clear">
-			<div class="response" id="mce-error-response" style="display:none"></div>
-			<div class="response" id="mce-success-response" style="display:none"></div>
-			</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-			<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_72c444e517c000d0bc8dc2204_176610aa0f" tabindex="-1" value=""></div>
-			<div class="clear"><input type="submit" value="NOTIFY ME" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary"></div>
-			</div>
-			</form>
-			</div>
 
-			<!--End mc_embed_signup-->';
+<form id="email_signup" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+  <input type="hidden" name="g" value="Qxi3kV">
+  <div class="klaviyo_field_group">
+    <input type="email" value="" name="email" id="k_id_email" placeholder="E-Mail Address" />
+  </div>
+  <div class="klaviyo_messages">
+    <div class="success_message" style="display:none;"></div>
+    <div class="error_message" style="display:none;"></div>
+    </div>
+  <div class="klaviyo_form_actions">
+    <button type="submit" class="klaviyo_submit_button btn btn-primary text-uppercase">Notify Me</button>
+  </div>
+</form>
+
+<script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+<script type="text/javascript">
+  KlaviyoSubscribe.attachToForms("#email_signup", {
+    hide_form_on_success: true
+  });
+</script>';
 
 		}
 
@@ -318,12 +321,7 @@ if($rows)
 
 			<div class = "col-sm-12 col-md-4">
 				<h3>Shop</h3>
-				<?php 
-					$shopDescription = get_post_meta( $post->ID, '_shop', true );
-				if ( $shopDescription ) {
-					echo '<p>' . $shopDescription . '</p>';
-				} else
-				echo the_field('shop_description', 'option'); ?>
+				<?php the_field('shop_description', 'option'); ?>
 			</div>
 		</div>
 	</div>
