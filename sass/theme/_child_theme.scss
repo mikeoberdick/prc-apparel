@@ -245,6 +245,64 @@ a {
 /*--------------------[FORMS]-------------------*/
 /*------------------------------------------------*/
 
+.single {
+	#k_id_email {
+		padding: 5px 25px;
+	    margin-top: 15px;
+	    margin-bottom: 15px;
+	    text-align: center;
+	    text-transform: uppercase;
+	}
+}
+
+.home {
+	#klaviyo {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+
+		#k_id_email {
+		background-color: transparent !important;
+    	border: solid 3px white;
+    	color: #fff;
+    	margin-right: 5px;
+    	padding: 5px 10px;
+    	@include border-radius(3px);
+    	@include placeholder-color(#fff);
+		}
+
+		.klaviyo_submit_button {
+			border-radius: 3px;
+			background-color: #f58634;
+			padding: 10px;
+	    	font-size: 14px;
+	    	color: #FFF;
+	    	font-weight: 600;
+	    	text-transform: uppercase;
+	    	letter-spacing: 1px;
+	    	border: none;
+		}
+
+		.klaviyo_messages {
+			background-color: rgba(245, 134, 52, 0.50);
+		    color: white;
+		    text-shadow: none;
+		    text-align: center;
+		    border-radius: 5px;
+
+		    .error_message {
+		    	padding: 10px;
+		    	margin-top: 5px;
+		    }
+
+		    .klaviyo_header, .klaviyo_subheader {
+		    	padding: 5px;
+		    }
+		}	
+	}
+
+}
+
 #contact {
 	.nf-form-fields-required {
 		display: none;
